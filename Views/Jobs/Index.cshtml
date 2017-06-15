@@ -1,0 +1,47 @@
+﻿@model IEnumerable<JobPlacement.Models.Job>
+
+@{
+    ViewBag.Title = "Jobs";
+}
+<div class="tab-content">
+    <div id="breakfast" class="tab-pane fade in active">
+        <h2>Jobs</h2>
+
+
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+        <table class="table">
+            <tr>
+
+                <th>@Html.DisplayNameFor(model => model.JobName)</th>
+                <th>@Html.DisplayNameFor(model => model.JobID)</th>
+                <th>@Html.DisplayNameFor(model => model.JobDesc)</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+
+                        @Html.DisplayFor(model => item.JobName)
+                    </td>
+                    <td>   @Html.DisplayFor(model => item.JobID)</td>>
+                    <td>  @Html.DisplayFor(model => item.JobDesc)</td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.JobID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.JobID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.JobID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+
